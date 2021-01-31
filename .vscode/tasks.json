@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: g++.exe build active file",
+            "command": "E:\\SoftwareInstalledNew\\MingW64_Installed\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+
+                "${workspaceFolder}/src/Main.cpp",               
+
+                "-I${workspaceFolder}/Dependencies/GLFW/include",
+                "-I${workspaceFolder}/Dependencies/GLEW/include",
+                "-I${workspaceFolder}/Dependencies/GLM/include",
+                "-I${workspaceFolder}/Dependencies/ASSIMP/include",
+                "-I${workspaceFolder}/Dependencies/IMAGE_LOADER/include",
+
+                "-L${workspaceFolder}/Dependencies/GLEW/lib",
+                "-L${workspaceFolder}/Dependencies/GLFW/lib",
+                "-L${workspaceFolder}/Dependencies/ASSIMP/lib",
+
+                "-lopengl32",
+                "-lglfw3dll",
+                "-lglew32dll",
+                
+                "-o",
+                "${workspaceFolder}/MainExecutable.exe"	
+				
+				
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
